@@ -1,5 +1,7 @@
 import defaultUserPhoto from './assets/photo-default.svg';
 import './App.css';
+import Card from './components/card/Card';
+import ContactInformationContent from './components/contactInformation/ContactInformationContent';
 
 function App() {
   const userProfile = {
@@ -29,6 +31,14 @@ function App() {
         <p>{userProfile.userDescription}</p>
       </div>
       <div className="main">
+        <Card 
+            header={'Контактная информация'} 
+            content={<ContactInformationContent 
+                        email={userProfile.contactInfo.email} 
+                        
+                    />} 
+        />
+
         <div className="card">
           <div className="card-header">Контактная информация</div>
           <div className="card-content"></div>
