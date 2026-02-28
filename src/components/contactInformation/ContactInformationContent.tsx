@@ -6,9 +6,9 @@ interface ContactInformationProps {
 }
 
 function ContactInformationContent({email, phone}:ContactInformationProps) {
-    return <div>
+    return <div className='contact-information'>
         <span>Email: {email}</span>
-        <span>Телефон: {phone}</span>
+        <span>Телефон: {phone ? phone : 'Не указан'}</span>
     </div>
 }
 

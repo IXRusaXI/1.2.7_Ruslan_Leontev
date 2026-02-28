@@ -2,27 +2,9 @@ import defaultUserPhoto from './assets/photo-default.svg';
 import './App.css';
 import Card from './components/card/Card';
 import ContactInformationContent from './components/contactInformation/ContactInformationContent';
+import userProfile from './components/user/userProfile'
 
 function App() {
-  const userProfile = {
-    userName: 'Дэн', // обязательное свойство
-    protoUrl: null, // необязательное свойство
-    userDescription: 'Любитель React и фронтенд разработки', // обязательное свойство
-    openForWork: true, // необязательное свойство
-    contactInfo: {
-      // обязательное свойство
-      email: 'abramov@example.com', // обязательное свойство
-      phone: '+1234567890', // необязательное свойство
-    },
-    location: {
-      // необязательное свойство
-      city: 'Москва', // обязательное свойство
-      country: 'Россия', // обязательное свойство
-      address: 'Большая полянка 44', // необязательное свойство
-    },
-    interests: ['программирование', 'путешествия', 'фотография'], // необязательное свойство
-  };
-
   return (
     <>
       <div className="description">
@@ -35,14 +17,23 @@ function App() {
             header={'Контактная информация'} 
             content={<ContactInformationContent 
                         email={userProfile.contactInfo.email} 
-                        
+                        phone={userProfile.contactInfo.phone}
                     />} 
         />
-
-        <div className="card">
-          <div className="card-header">Контактная информация</div>
-          <div className="card-content"></div>
-        </div>
+        <Card 
+            header={'Местоположение'} 
+            content={<ContactInformationContent 
+                        email={userProfile.contactInfo.email} 
+                        phone={userProfile.contactInfo.phone}
+                    />} 
+        />
+        <Card 
+            header={'Контактная информация'} 
+            content={<ContactInformationContent 
+                        email={userProfile.contactInfo.email} 
+                        phone={userProfile.contactInfo.phone}
+                    />} 
+        />
         <div className="card">
           <div className="card-header">Местоположение</div>
           <div className="card-content"></div>
