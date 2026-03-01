@@ -1,47 +1,42 @@
-import defaultUserPhoto from './assets/photo-default.svg';
 import './App.css';
 import Card from './components/card/Card';
 import ContactInformationContent from './components/contactInformation/ContactInformationContent';
 import userProfile from './components/user/userProfile'
+import LocationContent from './components/location/LocationContent';
+import InterestsContent from './components/interests/interestsContent';
+import Description from './components/description/Description';
 
 function App() {
   return (
     <>
-      <div className="description">
-        <img className="photo--default" src={defaultUserPhoto} />
-        <h4>{userProfile.userName}</h4>
-        <p>{userProfile.userDescription}</p>
-      </div>
+      <Description
+          photoUrl={userProfile.protoUrl}
+          name={userProfile.userName}
+          description={userProfile.userDescription}
+          />
       <div className="main">
-        <Card 
+        <Card key={'contactInformationCard'}
             header={'Контактная информация'} 
             content={<ContactInformationContent 
                         email={userProfile.contactInfo.email} 
                         phone={userProfile.contactInfo.phone}
                     />} 
         />
-        <Card 
+        <Card key={'locationCard'} className={!userProfile.location ? 'hidden' : undefined}
             header={'Местоположение'} 
-            content={<ContactInformationContent 
-                        email={userProfile.contactInfo.email} 
-                        phone={userProfile.contactInfo.phone}
+            content={<LocationContent 
+                        country={userProfile.location?.country} 
+                        city={userProfile.location?.city}
+                        adress={userProfile.location?.address}
+                        
                     />} 
         />
-        <Card 
-            header={'Контактная информация'} 
-            content={<ContactInformationContent 
-                        email={userProfile.contactInfo.email} 
-                        phone={userProfile.contactInfo.phone}
+        <Card key={'interestsCard'} className={!userProfile.interests ? 'hidden' : undefined}
+            header={'Интересы'} 
+            content={<InterestsContent 
+                        interests={userProfile.interests} 
                     />} 
         />
-        <div className="card">
-          <div className="card-header">Местоположение</div>
-          <div className="card-content"></div>
-        </div>
-        <div className="card">
-          <div className="card-header">Интересы</div>
-          <div className="card-content"></div>
-        </div>
       </div>
     </>
   );

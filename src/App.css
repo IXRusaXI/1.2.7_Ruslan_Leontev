@@ -51,3 +51,7 @@ p {
 .read-the-docs {
   color: #888;
 }
+
+.hidden {
+  display: none;
+}

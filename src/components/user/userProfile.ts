@@ -1,10 +1,26 @@
+import reactPhoto from '../../assets/react.svg'
+
 interface UserProfile {
-  userName: string
+  userName: string,
+  protoUrl?: string | null,
+  userDescription: string,
+  openForWork?: boolean,
+  contactInfo: {
+    email: string,
+    phone?: string
+  },
+  location?: {
+    city: string,
+    country: string,
+    address?: string
+  },
+  interests?: string[]
 }
 
 const userProfile: UserProfile = {
     userName: 'Дэн', // обязательное свойство
-    protoUrl: null, // необязательное свойство
+    // protoUrl: null, // необязательное свойство
+    protoUrl: reactPhoto, // необязательное свойство
     userDescription: 'Любитель React и фронтенд разработки', // обязательное свойство
     openForWork: true, // необязательное свойство
     contactInfo: {
