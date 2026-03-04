@@ -5,7 +5,7 @@ interface InterestsProps {
 function InterestsContent({interests} :InterestsProps) {
     if (!interests) return null
 
-    return <ul>
+    return <ul key={"interests"}>
         {interests.map(interes => <li>{interes}</li>)}
     </ul>
 }
