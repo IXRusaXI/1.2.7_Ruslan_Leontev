@@ -1,4 +1,4 @@
-import reactPhoto from '../../assets/react.svg'
+import Shpiz from '../../assets/Shpiz.jpg'
 
 interface UserProfile {
   userName: string,
@@ -19,8 +19,7 @@ interface UserProfile {
 
 const userProfile: UserProfile = {
     userName: 'Дэн', // обязательное свойство
-    // protoUrl: null, // необязательное свойство
-    protoUrl: reactPhoto, // необязательное свойство
+    protoUrl: Shpiz, // необязательное свойство
     userDescription: 'Любитель React и фронтенд разработки', // обязательное свойство
     openForWork: true, // необязательное свойство
     contactInfo: {

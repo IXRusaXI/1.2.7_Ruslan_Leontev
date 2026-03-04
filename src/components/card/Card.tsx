@@ -1,14 +1,14 @@
 interface CardProps {
     header: string,
     className?: string,
-    content?: React.ReactNode
+    children :React.ReactNode
 }
 
-function Card({header, content, className}: CardProps) {
+function Card({header, className, children} :CardProps) {
     return <div className={className ? "card " + className : "card"}>
         <div className="card-header">{header}</div>
-        <div className="card-content">{content}</div>
+        <div className="card-content">{children}</div>
     </div>
 }
 
-export default Card  ;
+export default Card;
