@@ -20,14 +20,14 @@ console.log('userProfile.contactInfo:', userProfile.contactInfo);
       <div className="main">
       <Card key='contactInformationCard'
             header='Контактная информация'>
-              <ContactInformationContent 
+              <ContactInformationContent key={"contactInformation"}
                         email={userProfile.contactInfo.email} 
                         phone={userProfile.contactInfo.phone}
                     />
       </Card>
         <Card key={'locationCard'} className={!userProfile.location ? 'hidden' : undefined}
             header={'Местоположение'}>
-            <LocationContent 
+            <LocationContent key={"location"}
                         country={userProfile.location?.country} 
                         city={userProfile.location?.city}
                         adress={userProfile.location?.address}
@@ -35,7 +35,7 @@ console.log('userProfile.contactInfo:', userProfile.contactInfo);
         </Card>
         <Card key={'interestsCard'} className={!userProfile.interests ? 'hidden' : undefined}
             header={'Интересы'}>
-            <InterestsContent key={"interests}
+            <InterestsContent key={"interests"}
                         interests={userProfile.interests} 
             /> 
         </Card>
